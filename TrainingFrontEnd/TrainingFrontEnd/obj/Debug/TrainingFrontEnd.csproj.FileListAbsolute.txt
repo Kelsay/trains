@@ -1,0 +1,6 @@
+E:\Umbraco\Training\TrainingFrontEnd\TrainingFrontEnd\bin\TrainingFrontEnd.dll.config
+E:\Umbraco\Training\TrainingFrontEnd\TrainingFrontEnd\bin\TrainingFrontEnd.dll
+E:\Umbraco\Training\TrainingFrontEnd\TrainingFrontEnd\bin\TrainingFrontEnd.pdb
+E:\Umbraco\Training\TrainingFrontEnd\TrainingFrontEnd\obj\Debug\TrainingFrontEnd.csprojResolveAssemblyReference.cache
+E:\Umbraco\Training\TrainingFrontEnd\TrainingFrontEnd\obj\Debug\TrainingFrontEnd.dll
+E:\Umbraco\Training\TrainingFrontEnd\TrainingFrontEnd\obj\Debug\TrainingFrontEnd.pdb
