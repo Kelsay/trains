@@ -5,10 +5,17 @@ using System.Web;
 
 namespace Training.Models
 {
-    public class TrainModel
+
+    public class TrainBaseModel
     {
+        public string Id;
         public string Name;
+        public string Thumbnail;
+    }
+    public class TrainModel : TrainBaseModel
+    {
         public string Description;
+        public string Manufacturer;
         public IEnumerable<string> Images;
 
     }
