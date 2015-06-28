@@ -11,9 +11,21 @@ namespace Training.App_Start
         public static void Register(HttpConfiguration config)
         {
             config.Routes.MapHttpRoute(
-                name: "TrainsApi",
+                name: "GetAll",
+                routeTemplate: "{controller}",
+                defaults: new { action = "GetAll", id = RouteParameter.Optional }
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "GetById",
+                routeTemplate: "{controller}/{id}",
+                defaults: new { action = "GetById" }
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "Defaut",
                 routeTemplate: "{controller}/{action}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                defaults: new { action = "GetAll", id = RouteParameter.Optional }
             );
 
             var appXmlType = config.Formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml");

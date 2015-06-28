@@ -1,3 +1,3 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Training.WebApiApplication" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Training.Code.TrainingApplication" Language="C#" %>
 
           
