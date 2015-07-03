@@ -213,12 +213,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Code\TrainingApplication.cs" />
+    <Compile Include="Code\Timetable.cs" />
+    <Compile Include="Code\TimetableEventHandlers.cs" />
+    <Compile Include="Code\MainApplication.cs" />
     <Compile Include="Code\UmbracoTrains.cs" />
     <Compile Include="Code\UmbracoExtensions.cs" />
     <Compile Include="Controllers\MasterController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
-    <Compile Include="Controllers\TrainsApiController.cs" />
+    <Compile Include="Controllers\StationsController.cs" />
+    <Compile Include="Controllers\TrainsController.cs" />
     <Compile Include="Models\StationModel.cs" />
     <Compile Include="Models\TimetableModel.cs" />
     <Compile Include="Models\TrainModel.cs" />

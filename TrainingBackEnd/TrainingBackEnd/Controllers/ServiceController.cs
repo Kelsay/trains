@@ -17,6 +17,8 @@ namespace Training.Controllers
 
         public string GetAll()
         {
+            var db = ApplicationContext.DatabaseContext.Database;
+ 
             return "";
         }
 

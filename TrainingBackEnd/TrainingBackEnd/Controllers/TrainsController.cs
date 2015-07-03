@@ -21,13 +21,13 @@ namespace Training.Controllers
         {
             IPublishedContent root = Umbraco.TypedContentAtRoot().FirstOrDefault();
             IEnumerable<IPublishedContent> trainNodes = root.Descendants("Train");
-            List<TrainBaseModel> trains = new List<TrainBaseModel>();
+            List<TrainModel> trains = new List<TrainModel>();
 
             if (trainNodes.Any())
             {
                 foreach (IPublishedContent train in trainNodes)
                 {
-                    trains.Add(new TrainBaseModel()
+                    trains.Add(new TrainModel()
                     {
                         Id = train.Id.ToString(),
                         Name = train.Name
@@ -45,7 +45,7 @@ namespace Training.Controllers
                 IPublishedContent page = Umbraco.TypedContent(id);
                 if (page.DocumentTypeAlias == "Train")
                 {
-                    TrainModel train = new TrainModel
+                    TrainFullModel train = new TrainFullModel
                     {
                         Id = page.Id.ToString(),
                         Name = page.GetString("name"),

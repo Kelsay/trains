@@ -6,13 +6,13 @@ using System.Web;
 namespace Training.Models
 {
 
-    public class TrainBaseModel
+    public class TrainModel
     {
         public string Id;
         public string Name;
         public string Thumbnail;
     }
-    public class TrainModel : TrainBaseModel
+    public class TrainFullModel : TrainModel
     {
         public string Description;
         public string Manufacturer;

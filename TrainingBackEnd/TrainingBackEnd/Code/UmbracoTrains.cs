@@ -6,6 +6,8 @@ using Umbraco.Core;
 using Umbraco.Core.Models;
 using Umbraco.Web;
 using Umbraco.Web.Mvc;
+using Training.Models;
+using Newtonsoft.Json;
 
 namespace Training.Code
 {
@@ -19,14 +21,15 @@ namespace Training.Code
             return root.Descendants("Train");
         }
 
-        public static bool StopsOnStation(this IPublishedContent page, string stationId)
+        public static bool StopsOnStation(this IPublishedContent page, int stationId)
         {
+            string timetableJson = page.GetString("timetable");
             return true;
         }
 
         public static string GetFirstStation(this IPublishedContent page, string serviceId)
         {
-            return "dupa";
+            return "";
         }
 
     }
