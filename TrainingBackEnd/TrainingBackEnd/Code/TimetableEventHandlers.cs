@@ -24,7 +24,10 @@ namespace Training.Code
             {
                 foreach (var entity in e.PublishedEntities)
                 {
-                    Timetable.Add(entity.Id);
+                    if (entity.ContentType.Alias == "Service")
+                    {
+                        TimetableHelper.Add(entity.Id);
+                    }
                 }
             }
         }
@@ -35,7 +38,10 @@ namespace Training.Code
             {
                 foreach (var entity in e.PublishedEntities)
                 {
-                    Timetable.Delete(entity.Id);
+                    if (entity.ContentType.Alias == "Service")
+                    {
+                        TimetableHelper.Delete(entity.Id);
+                    }
                 }
             }
         }

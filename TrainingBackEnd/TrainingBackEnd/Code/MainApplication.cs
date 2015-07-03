@@ -16,19 +16,20 @@ namespace Training.Code
         protected override void OnApplicationStarted(object sender, EventArgs e)
         {
             base.OnApplicationStarted(sender, e);
+            GlobalConfiguration.Configuration.Routes.IgnoreRoute("Resources", "{resource}.axd/{*pathInfo}");
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
 
     }
 
+    // Create needed tables in the database
     public class MainEvents : ApplicationEventHandler {
         protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
             var db = applicationContext.DatabaseContext.Database;
-
             if (!db.TableExist("Timetable"))
             {
-                db.CreateTable<DatabaseTimetableModel>(true);
+                db.CreateTable<Timetable>(true);
             }
         }
 

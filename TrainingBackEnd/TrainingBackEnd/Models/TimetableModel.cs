@@ -10,13 +10,14 @@ namespace Training.Models
 
     // Timetable model for the database
     [TableName("Timetable")]
-    public class DatabaseTimetableModel
+    public class Timetable
     {
         [PrimaryKeyColumn(AutoIncrement = true)]
         public int Id { get; set; }
         public int StationId { get; set; }
         public int ServiceId { get; set; } 
         public string Time { get; set; }
+        public string Destination { get; set; }
 
     }
 

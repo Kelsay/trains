@@ -10,35 +10,36 @@ using Training.Code;
 using Training.Models;
 using Umbraco.Web.WebApi;
 using Newtonsoft.Json.Serialization;
+using System.Net.Http;
+using System.Net;
 
 namespace Training.Controllers
 {
-    public class TrainsController : MasterController
+    public class TrainsController : MasterApiController
     {
 
         // Gets all trains and returns json serialized from List<TrainBaseModel>
-        public string GetAll()
+        public HttpResponseMessage GetAll()
         {
             IPublishedContent root = Umbraco.TypedContentAtRoot().FirstOrDefault();
-            IEnumerable<IPublishedContent> trainNodes = root.Descendants("Train");
-            List<TrainModel> trains = new List<TrainModel>();
+            IEnumerable<IPublishedContent> trains = root.Descendants("Train");
+            List<TrainModel> model = new List<TrainModel>();
 
-            if (trainNodes.Any())
+            if (trains.Any())
             {
-                foreach (IPublishedContent train in trainNodes)
+                foreach (IPublishedContent train in trains)
                 {
-                    trains.Add(new TrainModel()
+                    model.Add(new TrainModel()
                     {
                         Id = train.Id.ToString(),
                         Name = train.Name
                     });
                 }
             }
-
-            return JsonConvert.SerializeObject(trains, JsonSettings);
+            return Json(model);
         }
 
-        public string GetById(string id)
+        public HttpResponseMessage GetById(string id)
         {
             try
             {
@@ -53,13 +54,13 @@ namespace Training.Controllers
                         Description = page.GetString("description"),
                         Images = page.GetImagesAsList("images")
                     };
-                    return JsonConvert.SerializeObject(train, JsonSettings);
+                    return Json(train);
                 }
-                return "";
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
             }
             catch
             {
-                return "";
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
             }
         }
 

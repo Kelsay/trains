@@ -17,7 +17,7 @@ namespace Training.Models
 
     public class StationFullModel : StationModel
     {
-        //public List<ServiceTimetableModel> Timetable;
+        public IEnumerable<Timetable> Timetable { get; set; }
     }
 
 

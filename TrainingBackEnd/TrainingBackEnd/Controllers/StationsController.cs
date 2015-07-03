@@ -11,14 +11,17 @@ using Training.Models;
 using Umbraco.Web.WebApi;
 using Newtonsoft.Json.Serialization;
 using System.Web.Mvc;
+using System.Net.Http;
+using System.Net;
 
 namespace Training.Controllers
 {
-    public class StationsController : MasterController
+    public class StationsController : MasterApiController
     {
 
         // Gets all trains and returns json serialized from List<StationModel>
-        public string GetAll()
+        //public IEnumerable<StationModel> GetAll()
+        public HttpResponseMessage GetAll()
         {
             List<StationModel> model = new List<StationModel>();
             IEnumerable<IPublishedContent> stations = GetAllOfType("Station");
@@ -34,10 +37,11 @@ namespace Training.Controllers
                     });
                 }
             }
-            return JsonConvert.SerializeObject(model, JsonSettings);
+            //return model;
+            return Json(model);
         }
 
-        public string GetById(string id)
+        public HttpResponseMessage GetById(int id)
         {
             try
             {
@@ -47,22 +51,23 @@ namespace Training.Controllers
                     StationFullModel station = new StationFullModel
                     {
                         Id = page.Id.ToString(),
-                        Name = page.Name
+                        Name = page.Name,
+                        Timetable = TimetableHelper.Get(id)
                     };
-                    return JsonConvert.SerializeObject(station, JsonSettings);
+                    //return JsonConvert.SerializeObject(station, Formatting.Indented, JsonSettings);
+                    return Json(station);
                 }
-                return "ID Not Found";
+                return new HttpResponseMessage(HttpStatusCode.NotFound);
             }
             catch
             {
-                return "Bad request";
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
             }
         }
 
-        public void GetTimetable(int id)
+        public void GetTimetable(int stationId)
         {
-            IEnumerable<IPublishedContent> services = GetAllOfType("Service").Where(x => x.StopsOnStation(id));
-            List<StationTimetableModel> timetable = new List<StationTimetableModel>();
+            var timetable = TimetableHelper.Get(stationId);
         }
 
 

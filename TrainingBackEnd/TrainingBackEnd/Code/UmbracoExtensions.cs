@@ -19,7 +19,7 @@ namespace Training.Code
         // A set of convenience methods for getting values from Umbraco fields
 
         // Get field value as string or empty string if property does not exist
-        public static string GetString(this IPublishedContent page, string key)
+        public static string GetString(this IPublishedContent page, string key) 
         {
             return page.GetPropertyValue<string>(key, string.Empty);
         }
