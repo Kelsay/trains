@@ -1,0 +1,39 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Front End Boilerplate</title>
+    <meta name="description" content="Front End Boilerplate">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="build/main.css">
+
+    <base href="/">
+
+</head>
+<body ng-app="Trains">
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="main container">
+        <menu>
+            <a href="/" class="btn btn-default" role="button">Home</a>
+            <a href="/stations" class="btn btn-default" role="button">Stations</a>
+            <a href="/trains" class="btn btn-default" role="button">Trains</a>
+        </menu>
+
+        <div ng-view></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+    <script src="build/main.js"></script>
+
+</body>
+</html>
