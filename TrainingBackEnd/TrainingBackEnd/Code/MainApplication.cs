@@ -8,17 +8,19 @@ using Umbraco.Core.Persistence;
 using Umbraco.Web;
 using Training.App_Start;
 using Training.Models;
+using System.Web.Routing;
 
 namespace Training.Code
 {
     public class MainApplication : UmbracoApplication
     {
-        protected override void OnApplicationStarted(object sender, EventArgs e)
+
+        new void Application_Start(object sender, EventArgs e)
         {
-            base.OnApplicationStarted(sender, e);
-            GlobalConfiguration.Configuration.Routes.IgnoreRoute("Resources", "{resource}.axd/{*pathInfo}");
+            base.Application_Start(sender, e);
+            RouteTable.Routes.Ignore("{resource}.axd/{*pathInfo}"); // Ignore axd resource routes
             GlobalConfiguration.Configure(WebApiConfig.Register);
-        }
+        } 
 
     }
 
