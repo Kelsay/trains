@@ -70,7 +70,8 @@ namespace Training.Code
                 IPublishedContent media = Umbraco.TypedMedia(int.Parse(id));
                 if (media != null)
                 {
-                    return media.Url;
+                    string host = HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Host;
+                    return host + media.Url;
                 }
             }
             return "";
