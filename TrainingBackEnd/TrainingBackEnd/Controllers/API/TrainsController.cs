@@ -15,7 +15,7 @@ using System.Net;
 
 namespace Training.Controllers
 {
-    public class TrainsController : MasterApiController
+    public class TrainsController : BaseController
     {
 
         // Gets all trains and returns json serialized from List<TrainBaseModel>
@@ -32,7 +32,8 @@ namespace Training.Controllers
                     model.Add(new TrainModel()
                     {
                         Id = train.Id.ToString(),
-                        Name = train.Name
+                        Name = train.Name,
+                        Thumbnail = train.GetImagesAsList("images").ElementAt(0)
                     });
                 }
             }

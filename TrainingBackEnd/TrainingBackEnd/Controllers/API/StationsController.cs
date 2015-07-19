@@ -16,7 +16,7 @@ using System.Net;
 
 namespace Training.Controllers
 {
-    public class StationsController : MasterApiController
+    public class StationsController : BaseController
     {
 
         // Gets all trains and returns json serialized from List<StationModel>

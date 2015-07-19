@@ -14,10 +14,13 @@ using Umbraco.Web.WebApi;
 
 namespace Training.Controllers
 {
-    public class MasterApiController : UmbracoApiController
+    public class BaseController : UmbracoApiController
     {
 
-        public JsonSerializerSettings JsonSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
+        // Default JSON settings
+        public JsonSerializerSettings JsonSettings = new JsonSerializerSettings { 
+            ContractResolver = new CamelCasePropertyNamesContractResolver() 
+        };
 
         // Get all documents of the type 
 
