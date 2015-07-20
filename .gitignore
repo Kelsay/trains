@@ -1,6 +1,10 @@
-TrainingBackEnd/TrainingBackEnd/Front/node_modules/
-TrainingBackEnd/TrainingBackEnd/App_Data
-TrainingBackEnd/TrainingBackEnd/App_Data/Logs
-TrainingBackEnd/TrainingBackEnd/App_Data/ExamineIndexes
-TrainingBackEnd/TrainingBackEnd/App_Browsers
-TrainingBackEnd/TrainingBackEnd/obj
+packages/
+TrainingFrontEnd/node_modules/
+TrainingFrontEnd/bower_components/
+TrainingFrontEnd/build/
+TrainingFrontEnd/obj/
+TrainingBackEnd/App_Data
+TrainingBackEnd/App_Data/Logs
+TrainingBackEnd/App_Data/ExamineIndexes
+TrainingBackEnd/App_Browsers
+TrainingBackEnd/obj

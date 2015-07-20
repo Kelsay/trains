@@ -1,0 +1,11 @@
+<menu ng-controller="MenuController">
+    
+    <a class="btn btn-default" ui-sref="home">Home</a>
+    <a class="btn btn-default" ui-sref="trains">Trains</a>
+
+    <div class="side-menu">
+        <a class="btn btn-default" ui-sref="article({id: {{article.id}}})" ng-repeat="article in articles">
+            {{ article.heading }}
+        </a>
+    </div>
+</menu>

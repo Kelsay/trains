@@ -1,0 +1,11 @@
+<h1>Trains</h1>
+
+<div class="loading" ng-show="trains.length == 0">Loading</div>
+
+<ul class="list-group">
+    <li class="list-group-item" ng-repeat="train in trains">
+        <h3>{{ train.name }} <span class="glyphicon glyphicon-plus"></span></h3>
+        <img ng-show="train.thumbnail" ng-src="{{train.thumbnail}}" class="img-responsive img-thumbnail"/>
+        
+    </li>
+</ul>
