@@ -222,6 +222,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Code\StringExtensions.cs" />
     <Compile Include="Code\TimetableHelper.cs" />
     <Compile Include="Code\TimetableEventHandlers.cs" />
     <Compile Include="Code\MainApplication.cs" />

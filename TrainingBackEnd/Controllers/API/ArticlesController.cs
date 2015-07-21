@@ -49,7 +49,7 @@ namespace Training.Controllers
                     {
                         Id = page.Id.ToString(),
                         Heading = page.GetString("heading"),
-                        Body = page.GetString("body")
+                        Body = page.GetString("body").ChangeUrlsToAbsolute()
                     };
                     return Json(article);
                 }
