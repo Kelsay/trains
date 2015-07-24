@@ -1,0 +1,15 @@
+﻿.main-menu {
+    background: #fff;
+    height: 50px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding-top: 8px;
+
+    .side-menu {
+        float: right;
+    }
+}

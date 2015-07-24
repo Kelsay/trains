@@ -1,0 +1,35 @@
+.schedule {
+
+    .items {
+        border: 1px solid #eee;
+    }
+
+    .item {
+        border-bottom: 1px solid #eee;
+        padding: 6px 10px 7px 10px;
+        background: #fefefe;
+        cursor: pointer;
+
+        &:nth-child(2n) {
+            background: #F5FCFF;
+        }
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        .see-details {
+            float: right;
+            color: #40BFFF;
+            display: none;
+        }
+
+        &:hover {
+            background: #FFF3ED;
+
+            .see-details {
+                display: block;
+            }
+        }
+    }
+}
