@@ -9,6 +9,7 @@ namespace Training.Models
     {
         public string Id;
         public string Heading;
+        public string Alias;
     }
 
     public class ArticleFullModel : ArticleModel

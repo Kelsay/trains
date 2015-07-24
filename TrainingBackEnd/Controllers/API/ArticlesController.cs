@@ -31,7 +31,8 @@ namespace Training.Controllers
                     model.Add(new ArticleModel()
                     {
                         Id = article.Id.ToString(),
-                        Heading = article.GetString("heading")
+                        Heading = article.GetString("heading"),
+                        Alias = article.GetString("alias")
                     });
                 }
             }

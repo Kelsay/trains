@@ -6,7 +6,7 @@
         <a class="btn btn-link" ui-sref="trains">Trains</a>
 
         <div class="side-menu">
-            <a class="btn btn-link" ui-sref="article({id: {{article.id}}})" ng-repeat="article in articles">
+            <a class="btn btn-link" ui-sref="article({alias: '{{article.alias}}', id: {{article.id}}})" ng-repeat="article in articles">
                 {{ article.heading }}
             </a>
             <a class="btn btn-link" ui-sref="contact">Contact</a>

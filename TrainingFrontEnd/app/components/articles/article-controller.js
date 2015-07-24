@@ -3,9 +3,13 @@ angular.module("Trains")
     .config(['$stateProvider', function ($stateProvider) {
 
         $stateProvider.state("article", {
-            url: "/article/:id",
+            url: "/article/:alias",
             templateUrl: "app/components/articles/article.html",
-            controller: "ArticleController"
+            controller: "ArticleController",
+            params: {
+                id: '',
+                alias: ''
+            }
         });
 
     }])
