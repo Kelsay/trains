@@ -1,0 +1,10 @@
+<h1 class="title">Stations</h1> 
+<section class="main-container schedule">
+    <input class="form-control" ng-model="search" placeholder="Search station ..">
+    <ul class="items">
+        <li class="item" ng-repeat="station in stations | filter: search" ui-sref="station({ id : {{ station.id }}})">
+            <span class="badge">{{ station.code }}</span> {{ station.name }}
+            <span class="see-details">see details</span>
+        </li>
+    </ul>
+</section>

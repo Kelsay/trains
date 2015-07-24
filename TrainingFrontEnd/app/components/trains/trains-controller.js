@@ -2,29 +2,28 @@ angular.module("Trains")
 
     .config(['$stateProvider', function ($stateProvider) {
 
-        $stateProvider.state('trains', {
-            url: "/trains",
-            templateUrl: "app/components/trains/trains.html",
-            controller: "TrainsController"
-        });
+        $stateProvider
+            .state('trains', {
+                url: "/trains",
+                templateUrl: "build/templates/trains.html",
+                controller: "TrainsController"
+            })
+            .state('train', {
+                url: "/trains/:id",
+                templateUrl: "build/templates/train.html",
+                controller: "TrainsController"
+            });
 
     }])
 
+    .controller('TrainsController', ['$scope', 'Restangular','$stateParams', function ($scope, Restangular, $stateParams) {
 
-/*
-.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when("/trains", {
-        templateUrl: "app/components/trains/trains.html",
-        controller: "TrainsController"
-    })
-}]) */
-.controller('TrainsController',['$scope','Restangular',function ($scope,Restangular) {
+        var trains = Restangular.all('trains');
+        var id = $stateParams.id;
+        if (id) {
+            $scope.train = trains.one(id).get().$object;
+        } else {
+            $scope.trains = trains.getList().$object;
+        }      
 
-    $scope.hello = "Hello World. And scope.";
-
-    $scope.trains = Restangular.all("trains").getList().$object;
-
-    console.log(Restangular.all("trains").getList());
-
-
-}]);
+    }]);

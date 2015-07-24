@@ -1,0 +1,17 @@
+<h1 class="title">Schedule - {{ station.name }}</h1> 
+<section class="main-container schedule">
+    <div class="breadcrumbs">
+        <a ui-sref="stations">Stations</a> &raquo; {{ station.name }}
+    </div>
+
+    <h3>Location </h3>
+
+    <h3>Timetable</h3>
+
+    <ul class="items">
+        <li class="item" ng-repeat="item in station.timetable" ui-sref="service({id: {{ item.id }}})">
+            {{ item.time }} - {{ item.destination }}
+        <span class="see-details">see details</span>
+        </li>
+    </ul>
+</section>

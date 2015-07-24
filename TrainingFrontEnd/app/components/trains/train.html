@@ -1,0 +1,10 @@
+<h1 class="title">{{ train.name }}</h1>
+
+<div class="main-container">
+    <button ui-sref="trains"></button>
+    <div class="breadcrumbs">
+        <a ui-sref="trains">Trains</a> &raquo; <span>{{ train.name}}</span>
+    </div>
+    <span ng-show="train.manufacturer">Manufacturer: {{ train.manufacturer }}</span>
+    <div ng-bind-html="train.description | trusted"></div>
+</div>

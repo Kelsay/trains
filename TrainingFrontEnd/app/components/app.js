@@ -6,14 +6,14 @@ var app = angular.module('Trains', ['ngRoute', 'ngAnimate', 'restangular', 'ui.r
 .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: 'app/components/home/home.html',
+            templateUrl: 'build/templates/home.html',
         })
     .otherwise({ redirectTo: '/home' });
 
-    //$locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true);
 }])
 
-// Restangular Setup
+// Restangular Configuration
 
 .config(['RestangularProvider', function (RestangularProvider) {
 
