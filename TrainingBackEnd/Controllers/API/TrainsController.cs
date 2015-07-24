@@ -50,7 +50,7 @@ namespace Training.Controllers
                     TrainFullModel train = new TrainFullModel
                     {
                         Id = page.Id.ToString(),
-                        Name = page.GetString("name"),
+                        Name = page.Name,
                         Manufacturer = page.GetString("manufacturer"),
                         Description = page.GetString("description"),
                         Images = page.GetImagesAsList("images")
