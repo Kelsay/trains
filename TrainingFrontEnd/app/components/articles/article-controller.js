@@ -8,7 +8,7 @@ angular.module("Trains")
             controller: "ArticleController",
             params: {
                 id: '',
-                alias: ''
+                alias: '' 
             }
         });
 

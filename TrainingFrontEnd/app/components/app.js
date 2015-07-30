@@ -4,11 +4,11 @@
 var app = angular.module('Trains', ['ngRoute', 'ngAnimate', 'restangular', 'ui.router'])
 
 .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-    $routeProvider
-        .when('/', {
-            templateUrl: 'build/templates/home.html',
-        })
-    .otherwise({ redirectTo: '/home' });
+    //$routeProvider
+        //.when('/', {
+        //    templateUrl: 'build/templates/home.html',
+        //})
+    //.otherwise({ redirectTo: '/home' });
 
     $locationProvider.html5Mode(true);
 }])

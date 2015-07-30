@@ -58,26 +58,38 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\components\app.js" />
+    <Content Include="app\components\schedule\schedule-controller.js" />
+    <Content Include="app\components\schedule\station.html" />
+    <Content Include="app\components\schedule\stations.html" />
     <Content Include="app\components\articles\article-controller.js" />
     <Content Include="app\components\articles\article.html" />
+    <Content Include="app\components\common\filter-trusted.js" />
     <Content Include="app\components\home\home.html" />
+    <Content Include="app\components\home\home-controller.js" />
     <Content Include="app\components\menu\menu-controller.js" />
     <Content Include="app\components\menu\menu.html" />
-    <Content Include="app\components\schedule\schedule-controller.js" />
+    <Content Include="app\components\trains\train.html" />
     <Content Include="app\components\trains\trains-controller.js" />
     <Content Include="app\components\trains\trains.html" />
+    <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
     <Content Include="index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\MainApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bower.json" />
     <Content Include="package.json" />
-    <Content Include="app\styles\layout\layout.scss" />
+    <Content Include="app\styles\layout\main.scss" />
     <Content Include="app\styles\modules\schedule.scss" />
+    <Content Include="app\styles\modules\menu.scss" />
+    <Content Include="app\styles\layout\reset.scss" />
+    <Content Include="app\styles\layout\transitions.scss" />
+    <Content Include="app\styles\modules\home.scss" />
+    <Content Include="app\styles\layout\common.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

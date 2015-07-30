@@ -1,12 +1,12 @@
 <h1 class="title">Trains</h1>
 
-<div class="main-container">
+<div class="main-container trains">
     <div class="loading" ng-show="trains.length == 0">Loading</div>
 
     <ul>
         <li ng-repeat="train in trains">
             <h3>{{ train.name }} <span class="glyphicon glyphicon-plus"></span></h3>
-            <img ng-show="train.thumbnail" ng-src="{{train.thumbnail}}" class="img-responsive img-thumbnail" />
+            <img ng-show="train.thumbnail" ng-src="{{train.thumbnail}}" class="thumbnail" />
             <a ui-sref="train({id : {{ train.id }}})">load</a>
         </li>
     </ul>
