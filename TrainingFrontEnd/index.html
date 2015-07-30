@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Front End Boilerplate</title>
+    <title>Trains App</title>
     <meta name="description" content="Trains">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,7 +11,9 @@
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="build/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Exo:400,500,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/build/main.css">
 
     <base href="/">
 
@@ -21,19 +23,19 @@
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="main container">
+    <div class="main container"> 
 
         <!-- Main Menu -->
-        <ng-include src="'app/components/menu/menu.html'"></ng-include>
+        <ng-include src="'build/templates/menu.html'"></ng-include>
 
         <!-- Main View -->
-        <div ui-view>
+        <main ui-view class="view">
             <div class="loading">Loading ..</div>
-        </div>
+        </main>
 
     </div>
 
-    <script src="build/main.js"></script>
+    <script src="/build/main.js"></script>
 
 </body>
 </html>

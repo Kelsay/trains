@@ -23,7 +23,9 @@ var config = {
     targets: {
         'dir': 'build',
         'js': 'main.js',
-        'css': 'main.css'
+        'css': 'main.css',
+        'templates': 'build/templates',
+        'images': 'build/images'
     },
 
     // Build source files / watch paths
@@ -31,6 +33,7 @@ var config = {
         'scripts': 'app/components/**/*.js',
         'styles': 'app/styles/**/*.scss',
         'images': 'app/images/**/*.{jpg,png}',
+        'templates': 'app/components/**/*.html'
     },
 
     // SCSS files - order
@@ -94,6 +97,28 @@ gulp.task('styles', function () {
 });
 
 
+// TEMPLATES task
+// Copy all the templates to the build folder
+
+gulp.task("templates", function () {
+    return gulp.src(config.sources.templates)
+        .pipe($.compressor())
+        .pipe($.flatten())
+        .pipe(gulp.dest(config.targets.templates))
+        .pipe($.livereload())
+});
+
+// IMAGES task
+// Copy all the images to the build folder
+
+gulp.task("images", function () {
+    return gulp.src(config.sources.images)
+        .pipe($.flatten())
+        .pipe(gulp.dest(config.targets.images))
+        .pipe($.livereload())
+});
+
+
 // WATCH task
 // Watches files for changes and trigger livereload
 
@@ -101,12 +126,14 @@ gulp.task('watch', function () {
     $.livereload.listen();
     gulp.watch(config.sources.styles, ['styles']);
     gulp.watch(config.sources.scripts, ['scripts']);
+    gulp.watch(config.sources.templates, ['templates']);
+    gulp.watch(config.sources.images, ['images']);
 });
 
 // BUILD task
 // A wrapper that executes all sub-tasks
 
-gulp.task('build', ['scripts', 'styles']);
+gulp.task('build', ['scripts', 'styles', 'templates', 'images']);
 
 // DEFAULT task
 gulp.task('default', ['build', 'watch']);
